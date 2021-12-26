@@ -2,7 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
+from rest_framework.filters import SearchFilter
 
+from utils.pagination import BasicPagination
+from utils.views import CommonReadOnlyModelViewSet
 from .models import Server, NetworkDevice, IP
 from .serializers import IPSerializer, NetworkDeviceSerializer, ServerAutoReportSerializer, ServerSerializer
 from rest_framework import mixins
@@ -17,9 +20,12 @@ class ServerAutoReportViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     serializer_class = ServerAutoReportSerializer
 
 
-class ServerViewSet(viewsets.ReadOnlyModelViewSet):
+class ServerViewSet(CommonReadOnlyModelViewSet):
     queryset = Server.objects.all()
     serializer_class = ServerSerializer
+    pagination_class = BasicPagination
+    filter_backends = [SearchFilter]
+    search_fields = ['hostname']
 
 
 class NetworkDeviceViewSet(viewsets.ReadOnlyModelViewSet):

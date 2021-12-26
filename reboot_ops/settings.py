@@ -27,6 +27,8 @@ SECRET_KEY = 'm4x_@13kxc5b(9!1i(aa19$4*3xcvkvs#pv19$r+kv+@-sy*23'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+AUTH_USER_MODEL = 'users.User'
+
 
 # Application definition
 
@@ -116,7 +118,6 @@ DATABASES = {
     }
 }
 import pymysql
-
 pymysql.install_as_MySQLdb()
 
 # Password validation

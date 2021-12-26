@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.generics import ListAPIView
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from utils.response import APIResponse
 from rest_framework.response import Response
 
@@ -26,4 +26,15 @@ class CommonModelViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         res = super(CommonModelViewSet, self).list(request, *args, **kwargs)
+        return APIResponse(data=res.data)
+
+
+class CommonReadOnlyModelViewSet(ReadOnlyModelViewSet):
+
+    def retrieve(self, request, *args, **kwargs):
+        res = super(CommonReadOnlyModelViewSet, self).retrieve(request, *args, **kwargs)
+        return APIResponse(data=res.data)
+
+    def list(self, request, *args, **kwargs):
+        res = super(CommonReadOnlyModelViewSet, self).list(request, *args, **kwargs)
         return APIResponse(data=res.data)

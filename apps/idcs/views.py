@@ -72,4 +72,4 @@ class IdcModelViewSet(CommonModelViewSet):
     queryset = IDC.objects.all().order_by('id')
     serializer_class = IdcSerializer
     pagination_class = BasicPagination
-    permission_classes = [IsAuthenticated,]
+    # permission_classes = [IsAuthenticated,]
