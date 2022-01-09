@@ -1,0 +1,29 @@
+{
+	"ip": "192.168.1.17",
+	"hostname": "yz-ms-web-17",
+	"cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHZ 1",
+	"mem": "2G",
+	"disk": "100G",
+	"os": "centos 7",
+	"sn": "3FABC54A-3CC9-453C-8800-4F0237B71D87",
+	"rmt_card_ip": "",
+	"cabinet_position": null,
+	"uuid": "3FABC54A-3CC9-453C-8800-4F0237B71D87",
+	"last_check": "2018-07-01T04:34:24Z",
+	"remark": null,
+	"manufacturer":3,
+	"model_name": 9,
+	"idc": null,
+	"cabinet": null,
+	"network": [
+		{
+		  "name": "eth0",
+		  "mac_address": "27:3d:2e:c8:91:d9",
+		  "remark": "reamrk",
+		  "ips": [
+		  		{"ip_addr": "192.168.1.112", "netmask": "255.255.255.0"},
+		  		{"ip_addr": "192.168.1.113", "netmask": "255.255.255.0"}
+		  ]
+		}
+	]
+}
